@@ -12,10 +12,10 @@ app.get('/scrape', async (req, res) => {
 
     const limit = Math.min(parseInt(maxResults || '20', 10), 50);
 
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+    const browser = await puppeteer.launch({ 
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox'] 
+});
 
     const page = await browser.newPage();
     const url = `https://www.google.com/maps/search/${encodeURIComponent(query)}`;
