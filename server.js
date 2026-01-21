@@ -2,6 +2,9 @@ const express = require('express');
 const puppeteer = require('puppeteer');
 const app = express();
 
+app.get('/', (req, res) => res.status(200).send('OK'));
+app.get('/healthz', (req, res) => res.status(200).send('OK'));
+
 app.get('/scrape', async (req, res) => {
   try {
     const { query, maxResults } = req.query;
